@@ -6,6 +6,16 @@ import Button from "../components/Button.astro";
 <MainLayout title="Problemet med plastikforurening">
   <div class="top-element">
     <h1 class="max-w-6xl md:max-w-7xl mx-auto pt-12">Problemet med plastikforurening</h1>
+    <div class="flex flex-col max-w-6xl mx-auto py-20">
+      <div class="flex flex-col justify-start items-start py-20">
+        <img src="/column1.svg" alt="column1" class="w-1/2" />
+        <h2 class="text-left pt-4 text-[#FAFAFA]">Af plastikken flyder i overfladen</h2>
+      </div>
+      <div class="p-4 flex flex-col justify-center items-end py-20">
+        <img src="/column2.svg" alt="column2" class="w-1/2" />
+        <h2 class="text-right pt-4 text-[#FAFAFA]">Ligger længere nede i vandsøjlen</h2>
+      </div>
+    </div>
   </div>
 </MainLayout>
 
@@ -22,6 +32,10 @@ import Button from "../components/Button.astro";
     text-shadow: 2px 2px 4px #000000;
     color: white;
     line-height: 1.1;
+  }
+
+  h2 {
+    text-shadow: 2px 2px 4px #000000;
   }
 
   @media (max-width: 600px) {
