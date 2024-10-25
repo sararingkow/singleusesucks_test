@@ -4,5 +4,23 @@ import Button from "../components/Button.astro";
 ---
 
 <MainLayout title="Problemet med plastikforurening">
-  <h1>Problemet med plastikforurening</h1>
+  <div class="top-element">
+    <h1 class="max-w-6xl mx-auto pt-12">Problemet med plastikforurening</h1>
+  </div>
 </MainLayout>
+
+<style>
+  .top-element {
+    background-image: url(/lightroom-img3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 200vh;
+  }
+
+  h1 {
+    text-shadow: 2px 2px 4px #000000;
+    color: white;
+    line-height: 1.1;
+  }
+</style>

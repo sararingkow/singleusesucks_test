@@ -2,6 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
+@layer base {
+  img,
+  video,
+  .cusor {
+    @apply cursor-handcursor;
+  }
 
+  h1 {
+    @apply text-8xl;
+    @apply uppercase;
+    @apply font-black;
+    @apply text-gray-800;
+    @apply font-kanit;
+  }
+
+  h2 {
+    @apply text-5xl;
+    @apply font-bold;
+    @apply text-gray-800;
+    @apply font-kanit;
+  }
+
+  h3 {
+    @apply text-4xl;
+    @apply font-bold;
+    @apply text-gray-800;
+    @apply font-kanit;
+  }
+
+  p {
+    @apply text-gray-800;
+    @apply font-medium;
+    @apply font-lato;
+  }
+
+  a,
+  li {
+    @apply font-normal;
+    @apply font-kanit;
+  }
+
+  @media (max-width: 600px) {
+    h1 {
+      @apply text-5xl;
+    }
+
+    h2 {
+      @apply text-3xl;
+    }
+
+    h3 {
+      @apply text-2xl;
+    }
+  }
 }
