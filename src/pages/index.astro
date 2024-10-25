@@ -5,7 +5,7 @@ import Button from "../components/Button.astro";
 
 <MainLayout title="Problemet med plastikforurening">
   <div class="top-element">
-    <h1 class="max-w-6xl mx-auto pt-12">Problemet med plastikforurening</h1>
+    <h1 class="max-w-6xl md:max-w-7xl mx-auto pt-12">Problemet med plastikforurening</h1>
   </div>
 </MainLayout>
 
@@ -22,5 +22,16 @@ import Button from "../components/Button.astro";
     text-shadow: 2px 2px 4px #000000;
     color: white;
     line-height: 1.1;
+  }
+
+  @media (max-width: 600px) {
+    .top-element {
+      height: 100vh;
+    }
+
+    h1 {
+      word-break: break-word;
+      hyphens: auto;
+    }
   }
 </style>
