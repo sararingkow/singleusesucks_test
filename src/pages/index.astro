@@ -8,16 +8,16 @@ import Slider from "../components/Slider.astro";
     <!-- Sky Background -->
     <div class="absolute top-0 left-0 w-full h-1/2 z-0 overflow-hidden"></div>
 
-    <!-- Parallax Waves with Animation -->
+    <!-- Parallax Waves with CSS-Only Animation -->
     <div
-      class="absolute bottom-0 w-full h-2/3 z-10 bg-transparent animate-[float2_8s_linear_infinite] opacity-100"
-      style="background-image: url('/waves.webp'); background-size: cover; background-repeat: no-repeat; background-position:bottom;"
+      class="wave-layer absolute bottom-0 w-full h-2/3 z-10 bg-transparent opacity-100 animation"
+      style="background-image: url('/waves.webp'); background-size: cover; background-repeat: no-repeat; background-position: bottom; background-attachment: fixed; margin-top: -50px;"
     >
     </div>
 
     <div
-      class="absolute bottom-0 w-full h-2/3 z-20 bg-transparent animate-[float2_10s_linear_infinite]"
-      style="background-image: url('/waves.webp'); background-size: cover; background-repeat: no-repeat; background-position:bottom;"
+      class="wave-layer absolute bottom-0 w-full h-2/3 z-20 bg-transparent"
+      style="background-image: url('/waves.webp'); background-size: cover; background-repeat: no-repeat; background-position: bottom; background-attachment: fixed; margin-top: -50px;"
     >
     </div>
 
@@ -25,29 +25,24 @@ import Slider from "../components/Slider.astro";
     <div class="absolute inset-0 bg-gradient-to-t from-[#1C1E23] to-transparent z-30"></div>
 
     <!-- Your Content (Top Element) -->
-    <div class="top-element relative z-50 text-left text-white max-w-5xl md:max-w-6xl mx-auto pt-12">
-      <h1 class="text-[#FAFAFA]">Problemet med plastikforurening</h1>
-
+    <div class="top-element relative z-50 text-left max-w-5xl mx-auto pt-12">
+      <h1 class="text-[#FAFAFA] text-5xl md:text-8xl">Problemet med plastikforurening</h1>
       <div class="data-columns flex flex-col max-w-5xl mx-auto py-20 z-10">
-        <div class="flex flex-col justify-start items-start py-20 z-50 relative">
+        <div id="column1" class="flex flex-col justify-start items-start py-20 z-50 relative">
           <img src="/column1.svg" alt="column1" class="w-2/3 md:w-1/2" />
           <h2 class="text-left pt-4 text-[#FAFAFA]">Af plastikken <br class="md:hidden block" />flyder i overfladen</h2>
         </div>
-        <div class="p-4 flex flex-col justify-center items-end py-20 z-50 relative">
+        <div id="column2" class="p-4 flex flex-col justify-center items-end py-20 z-50 relative">
           <img src="/column2.svg" alt="column2" class="w-2/3 md:w-1/2" />
           <h2 class="text-right pt-4 text-[#FAFAFA]">Ligger længere <br class="md:hidden block" /> nede i vandsøjlen</h2>
         </div>
       </div>
     </div>
-
-    <!-- Trash Elements -->
-    <img src="/pot.webp" alt="trash" class="opacity-50 absolute bottom-[17.333333%] left-[0%] w-52 animate-[float_5s_linear_infinite] z-50" />
-    <img src="/straw.webp" alt="trash" class="opacity-40 absolute bottom-[-7%] right-1/4 w-60 animate-[float_6s_linear_infinite] z-30" />
-    <img src="/bag3.webp" alt="trash" class="opacity-50 absolute bottom-[20.333333%] left-[40%] w-60 animate-[float_4s_linear_infinite] z-50" />
   </section>
 
-  <div class="pb-20 md:pb-40"></div>
+  <div class="pb-20 md:pb-[20rem]"></div>
   <Slider />
+
   <style>
     /* Misc. styles */
     h1,
@@ -62,4 +57,29 @@ import Slider from "../components/Slider.astro";
       background-position: center;
     }
   </style>
+
+  <script>
+    import { inView } from "motion";
+
+    /* Parallax Animation */
+    window.addEventListener("scroll", () => {
+      const scrolled = window.scrollY;
+
+      document.querySelectorAll(".wave-layer").forEach((wave, index) => {
+        const speed = (index + 1) * 1.2;
+        wave.style.backgroundPositionY = `${scrolled * speed}px`;
+      });
+    });
+
+    /* inView Animations */
+    const elementmedanimation1 = document.querySelector("#column1");
+    inView(elementmedanimation1, () => {
+      elementmedanimation1.classList.add("animate__animated", "animate__fadeInLeft");
+    });
+
+    const elementmedanimation2 = document.querySelector("#column2");
+    inView(elementmedanimation2, () => {
+      elementmedanimation2.classList.add("animate__animated", "animate__fadeInRight");
+    });
+  </script>
 </MainLayout>
