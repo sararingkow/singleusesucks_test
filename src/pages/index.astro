@@ -1,50 +1,65 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from "../components/Button.astro";
+import Slider from "../components/Slider.astro";
 ---
 
 <MainLayout title="Problemet med plastikforurening">
-  <div class="top-element">
-    <h1 class="max-w-6xl md:max-w-7xl mx-auto pt-12">Problemet med plastikforurening</h1>
-    <div class="data-columnsflex flex-col max-w-6xl mx-auto py-20">
-      <div class="flex flex-col justify-start items-start py-20">
-        <img src="/column1.svg" alt="column1" class="w-2/3 md:w-1/2" />
-        <h2 class="text-left pt-4 text-[#FAFAFA]">Af plastikken <br class="md:hidden block" />flyder i overfladen</h2>
-      </div>
-      <div class="p-4 flex flex-col justify-center items-end py-20">
-        <img src="/column2.svg" alt="column2" class="w-2/3 md:w-1/2" />
-        <h2 class="text-right pt-4 text-[#FAFAFA]">Ligger længere <br class="md:hidden block" /> nede i vandsøjlen</h2>
+  <section class="relative h-screen w-full overflow-hidden">
+    <!-- Sky Background -->
+    <div class="absolute top-0 left-0 w-full h-1/2 z-0 overflow-hidden"></div>
+
+    <!-- Parallax Waves with Animation -->
+    <div
+      class="absolute bottom-0 w-full h-2/3 z-10 bg-transparent animate-[float2_8s_linear_infinite] opacity-100"
+      style="background-image: url('/waves.webp'); background-size: cover; background-repeat: no-repeat; background-position:bottom;"
+    >
+    </div>
+
+    <div
+      class="absolute bottom-0 w-full h-2/3 z-20 bg-transparent animate-[float2_10s_linear_infinite]"
+      style="background-image: url('/waves.webp'); background-size: cover; background-repeat: no-repeat; background-position:bottom;"
+    >
+    </div>
+
+    <!-- Gradient Mask -->
+    <div class="absolute inset-0 bg-gradient-to-t from-[#1C1E23] to-transparent z-30"></div>
+
+    <!-- Your Content (Top Element) -->
+    <div class="top-element relative z-50 text-left text-white max-w-5xl md:max-w-6xl mx-auto pt-12">
+      <h1 class="text-[#FAFAFA]">Problemet med plastikforurening</h1>
+
+      <div class="data-columns flex flex-col max-w-5xl mx-auto py-20 z-10">
+        <div class="flex flex-col justify-start items-start py-20 z-50 relative">
+          <img src="/column1.svg" alt="column1" class="w-2/3 md:w-1/2" />
+          <h2 class="text-left pt-4 text-[#FAFAFA]">Af plastikken <br class="md:hidden block" />flyder i overfladen</h2>
+        </div>
+        <div class="p-4 flex flex-col justify-center items-end py-20 z-50 relative">
+          <img src="/column2.svg" alt="column2" class="w-2/3 md:w-1/2" />
+          <h2 class="text-right pt-4 text-[#FAFAFA]">Ligger længere <br class="md:hidden block" /> nede i vandsøjlen</h2>
+        </div>
       </div>
     </div>
-  </div>
+
+    <!-- Trash Elements -->
+    <img src="/pot.webp" alt="trash" class="opacity-50 absolute bottom-[17.333333%] left-[0%] w-52 animate-[float_5s_linear_infinite] z-50" />
+    <img src="/straw.webp" alt="trash" class="opacity-40 absolute bottom-[-7%] right-1/4 w-60 animate-[float_6s_linear_infinite] z-30" />
+    <img src="/bag3.webp" alt="trash" class="opacity-50 absolute bottom-[20.333333%] left-[40%] w-60 animate-[float_4s_linear_infinite] z-50" />
+  </section>
+
+  <div class="pb-20 md:pb-40"></div>
+  <Slider />
+  <style>
+    /* Misc. styles */
+    h1,
+    h2 {
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    section {
+      background-image: url("/skies.webp");
+      background-size: 500vh;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  </style>
 </MainLayout>
-
-<style>
-  .top-element {
-    background-image: url(/lightroom-img3.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 200vh;
-  }
-
-  h1 {
-    text-shadow: 2px 2px 4px #000000;
-    color: white;
-    line-height: 1.1;
-  }
-
-  h2 {
-    text-shadow: 2px 2px 4px #000000;
-  }
-
-  @media (max-width: 600px) {
-    .top-element {
-      height: 200vh;
-    }
-    h1 {
-      word-break: break-word;
-      hyphens: auto;
-    }
-  }
-</style>

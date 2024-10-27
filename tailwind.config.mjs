@@ -18,6 +18,20 @@ export default {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-100%)" },
         },
+        animation: {
+          wave: "wave 20s linear infinite",
+          float: "float 5s ease-in-out infinite",
+        },
+        keyframes: {
+          wave: {
+            "0%": { transform: "translateX(0)" },
+            "100%": { transform: "translateX(-100%)" },
+          },
+          float: {
+            "0%, 100%": { transform: "translateY(0)" },
+            "50%": { transform: "translateY(-10px)" },
+          },
+        },
       },
     },
   },

@@ -57,3 +57,60 @@
     }
   }
 }
+
+@layer components {
+  /* Each wave layer moves at a different speed */
+  .wave1 {
+    animation: wave 12s linear infinite;
+  }
+  .wave2 {
+    animation: wave 16s linear infinite;
+  }
+  .wave3 {
+    animation: wave 20s linear infinite;
+  }
+
+  /* Floating elements */
+  .floating-element {
+    animation: float 5s ease-in-out infinite;
+  }
+}
+
+/* Wave Animation */
+@keyframes wave {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-5%) translateY(-2%);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% {
+    transform: translatey(0);
+  }
+  50% {
+    transform: translatey(-10px);
+  }
+  100% {
+    transform: translatey(0);
+  }
+}
+
+/* Floating Animation 2 */
+@keyframes float2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

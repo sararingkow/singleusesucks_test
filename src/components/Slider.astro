@@ -1,0 +1,110 @@
+---
+
+---
+
+<div class="flex items-center justify-start max-w-5xl md:max-w-6xl mx-auto pt-20">
+  <h2 class="text-[#FAFAFA]">De tre hovedpunkter i problemet</h2>
+</div>
+<section class="relative flex items-center justify-center h-screen overflow-hidden">
+  <div class="relative w-3/4 lg:w-1/2">
+    <div class="overflow-hidden shadow-lg rounded-lg">
+      <div id="slider" class="flex transition-transform duration-500 ease-in-out">
+        <div class="min-w-full">
+          <img src="/turtle2.webp" alt="Slide 1" class="w-full h-96" />
+          <div class="p-4 bg-[#fafafa]/80">
+            <h3 class="text-2xl font-bold">Havdyr er særligt udsatte</h3>
+            <p class="mt-2">
+              Plastikforurening i verdenshavene er et alvorligt problem, med omkring 8 millioner tons plastik, der hvert år havner i havene – svarende
+              til én lastbilfuld plastik hvert minut. Dette tal stammer fra 2015, og mængden er formentlig steget siden da. Havdyr som for eksempel
+              havskildpadder forveksler tit plastik med mad og risikerer at dø af kvælning eller sult, da plastikken ikke kan fordøjes. Mikroplastik
+              spreder også bakterier og vira, der skader havets dyreliv. Sæler bliver ofte fanget i gamle fiskegarn og drukner, hvis de ikke kan nå op
+              til overfladen for at trække vejret. Fisk og muslinger optager mikroplastik, som ender i vores fødekæde, hvilket vækker bekymring på
+              grund af plastikkens kemikalier.
+            </p>
+          </div>
+        </div>
+        <div class="min-w-full">
+          <iframe
+            class="w-full h-96"
+            src="https://www.youtube.com/embed/3c5BzEOrNi8"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+          <div class="p-4 bg-[#fafafa]/80 rounded-b-lg">
+            <h3 class="text-2xl font-bold">Plastik er fyldt med kemikalier</h3>
+            <p class="mt-2">
+              Al plastik indeholder kemikalier kaldet additiver, der gør materialet funktionelt. Disse kemikalier kan enten være blødgørere,
+              UV-beskyttere eller flammehæmmere. Globalt produceres der over 400 millioner tons plastik årligt, og over 16.000 kemikalier er knyttet
+              til produktionen. Af disse anses 25% for at være skadelige, og mange er uregulerede. For over 60% af de anvendte kemikalier mangler vi
+              viden om deres effekter på miljøet og vores sundhed. Plasttyper som for eksempel PVC indeholder store mængder af skadelige additiver og
+              bør udfases.
+            </p>
+          </div>
+        </div>
+        <div class="min-w-full">
+          <iframe
+            class="w-full h-96"
+            src="https://www.youtube.com/embed/T6mUfvJUdwI"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+          <div class="p-4 bg-[#fafafa]/80">
+            <h3 class="text-2xl font-bold">Mikroplastik udgør en sundhedsrisiko</h3>
+            <p class="mt-2">
+              Ny forskning viser, at mikroplast ikke kun forurener naturen, men også vores kroppe. Jo mindre plastpartiklerne er, jo større en
+              sundhedsrisiko udgør de, da de lettere optages i kroppen. Studier har vist, at mikroplast kan forårsage celledød og skader på
+              cellemembraner. I dyreforsøg har man set, at mikroplast hurtigt når fostres hjerter og hjerner, og hos mennesker er der fundet højere
+              koncentrationer af mikroplast hos patienter med tarmsygdomme. Mikroplast udgør derfor en potentiel sundhedsfare, og vi bør handle
+              hurtigt ud fra forsigtighedsprincippet, da vi endnu ikke kender de fulde konsekvenser.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      id="prev"
+      class="flex justify-center items-center gap-2 absolute left-5 top-[52%] transform -translate-y-1/2 bg-[#FF1054] px-4 py-2 rounded-lg hover:bg-[#B4003C] hover:shadow-sm text-[#FAFAFA] transition hover:-translate-y-1"
+      ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
+      </svg>
+      Forrige
+    </button>
+    <button
+      id="next"
+      class="flex justify-center items-center gap-2 absolute right-5 top-[52%] transform -translate-y-1/2 bg-[#FF1054] px-4 py-2 rounded-lg hover:bg-[#B4003C] hover:shadow-sm text-[#FAFAFA] transition hover:-translate-y-1"
+      >Næste<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+      </svg>
+    </button>
+  </div>
+  <img src="/fork.webp" alt="trash" class="opacity-30 absolute bottom-[75.333333%] left-[-0.666667%] w-60 animate-[float_4s_linear_infinite] z-50" />
+  <img src="/bottle2.webp" alt="trash" class="opacity-30 absolute bottom-[30%] left-[80%] w-80 animate-[float_5s_linear_infinite] z-50" />
+  <img src="/bag4.webp" alt="trash" class="opacity-30 absolute bottom-[-20%] right-[80%] w-60 animate-[float_6s_linear_infinite] z-30" />
+</section>
+
+<script>
+  const slider = document.getElementById("slider");
+  const nextBtn = document.getElementById("next");
+  const prevBtn = document.getElementById("prev");
+
+  let currentIndex = 0;
+  const slides = slider.children;
+  const totalSlides = slides.length;
+
+  function updateSlider() {
+    const offset = -currentIndex * 100;
+    slider.style.transform = `translateX(${offset}%)`;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlider();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlider();
+  });
+</script>

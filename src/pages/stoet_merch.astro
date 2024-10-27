@@ -1,7 +1,39 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
 ---
 
 <MainLayout title="Støt">
-  <h1>Støt</h1>
+  <section>
+    <div
+      id="stock"
+      class="flex items-center h-screen w-100 bg-cover bg-center sticky top-0 stickyparallax1"
+      style="background-image: url('/underwater.webp')"
+    >
+      <div class="text-box lg:ml-64 border-[#0C1A1B] bg-[#0C1A1B]/80 p-6 md:p-10 rounded-2xl shadow-md max-w-[600px]">
+        <h2 class="text-[#FAFAFA] pb-8">Hjælp os med at beskytte havets liv mod plastikforurening</h2>
+        <p class="text-[#FAFAFA]">
+          Dit bidrag kan gøre en forskel. Ved at støtte vores arbejde kan du hjælpe med at beskytte truede havdyr og vores planet mod den ødelæggende
+          effekt af plastikforurening. Sammen kan vi skabe en renere fremtid for alle. Støt os nu!
+        </p>
+        <div class="pt-6"><a href="/formular"><Button variant="primary" size="small">Støt</Button></a></div>
+      </div>
+    </div>
+
+    <div
+      class="flex justify-center items-center h-screen w-100 bg-cover bg-center sticky top-0 stickyparallax3"
+      style="background-image: url('/turtle.webp')"
+    >
+      <div class="text-box lg:ml-64 border-[#0C1A1B] bg-[#0C1A1B]/80 p-6 md:p-10 rounded-2xl shadow-md max-w-[600px]">
+        <h2 class="text-[#FAFAFA] pb-8">Støt kampen mod plastikforurening – én kop ad gangen</h2>
+        <p class="text-[#FAFAFA]">
+          Gør en forskel i kampen mod unødvendig plastikforurening. Med vores miljøvenlige produkter kan du vise din støtte til en verden fri for
+          engangsplastik. Gør små valg til store forandringer – fordi <span class="text-[#FF1054]">#singleusesucks</span>!
+        </p>
+        <div class="pt-6">
+          <a href="https://www.hjemhavn.dk/collections/plastic-change-merchandise"><Button variant="secondary" size="small">Køb</Button></a>
+        </div>
+      </div>
+    </div>
+  </section>
 </MainLayout>
